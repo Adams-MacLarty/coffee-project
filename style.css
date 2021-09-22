@@ -11,3 +11,7 @@ td, th {
 p {
     color: gray;
 }
+
+.btn {
+    width: 100%;
+}
