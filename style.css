@@ -15,3 +15,8 @@ p {
 .btn {
     width: 100%;
 }
+
+.content {
+    font-size: x-large;
+    padding: 20px;
+}
