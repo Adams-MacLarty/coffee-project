@@ -1,22 +1,24 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
-}
+/*table {*/
+/*    border-collapse: collapse;*/
+/*    margin: 15px 0;*/
+/*}*/
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
-
-p {
-    color: gray;
-}
+/*td, th {*/
+/*    border: 1px solid black;*/
+/*    padding: 5px 10px;*/
+/*}*/
 
 .btn {
     width: 100%;
 }
 
-.content {
-    font-size: x-large;
-    padding: 20px;
+.coffee-name {
+    font-size: xx-large;
 }
+
+.roast-name {
+    font-size: large;
+    color: gray;
+    padding: 0 20px 0 5px;
+}
+
