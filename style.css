@@ -26,12 +26,14 @@ body {
     background-color: var(--main);
     color: var(--main);
     padding: 1em;
+    background-image: url("background-coffee_beans.jpg");
 }
 
 .inside {
     background-color: blanchedalmond;
     font-family: "Hoefler Text", sans-serif;
     font-size: 2em;
+    opacity: 75%;
 }
 
 .btn {
