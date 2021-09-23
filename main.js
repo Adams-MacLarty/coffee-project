@@ -2,7 +2,7 @@
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    // html += '<div class="coffeeid">' + coffee.id + '</div>';
+     html += '<div class="coffeeid">' + coffee.id + '</div>';
     html += '<div class="coffee-name">' + coffee.name + '</div>';
     html += '<p>' + coffee.roast + '<p>';
     html += '</div>';
@@ -12,7 +12,7 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
-    for (var i = coffees.length - 1; i >= 0; i--) {
+    for (var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
