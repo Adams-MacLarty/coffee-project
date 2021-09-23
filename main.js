@@ -2,12 +2,7 @@
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    // html += '<div class="coffeeid">' + coffee.id + '</div>';
     html += '<span class="coffee-name content">' + coffee.name + '<span class="roast-name">' + coffee.roast + '</span>' + '</span>';
-    // html += '<p>' + coffee.roast + '<p>';
-    //  html += '<div class="coffeeid">' + coffee.id + '</div>';
-    // html += '<div class="coffee-name">' + coffee.name + '</div>';
-    html += '<p>' + coffee.roast + '<p>';
     html += '</div>';
 
     return html;
@@ -36,11 +31,6 @@ function searchCoffees() {
             tbody.innerHTML = renderCoffees(searchedCoffees);
         })
     })
-
-
-    // TODO:append the innerHTML to show results of search ,atched up with coffees names
-
-
 }
 
 function updateCoffees(e) {
@@ -58,7 +48,7 @@ function updateCoffees(e) {
 }
 
 function addACoffee(e) {
-    var addCoffee = document.querySelector('#search-roasts')
+    var addCoffee = document.querySelector('#search-roasts');
     addCoffee.addEventListener('keyup', function (e) {
         var input = e.target.value;
         console.log(input)
