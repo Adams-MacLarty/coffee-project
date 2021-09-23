@@ -19,13 +19,11 @@ function renderCoffees(coffees) {
 function searchCoffees() {
     var coffeeSearch = document.getElementById('coffee-form');
     var searchedCoffees = []
-    // added an event listener to the coffee-form to capture user input
     coffeeSearch.addEventListener('keyup', function (e) {
         var searchStr = e.target.value.toLowerCase();
         console.log(searchStr)
-        // TODO: add functionality to take user input (searchStr) and match it up with coffee names
-        coffees.forEach(function(coffee) {
-            if(coffee.name.toLowerCase().includes(searchStr.toLowerCase())) {
+        coffees.forEach(function (coffee) {
+            if (coffee.name.toLowerCase().includes(searchStr.toLowerCase())) {
                 searchedCoffees.push(coffee);
             }
             tbody.innerHTML = renderCoffees(searchedCoffees);
@@ -48,12 +46,19 @@ function updateCoffees(e) {
 }
 
 function addACoffee(e) {
+    e.preventDefault()
+
+    var newCoffeeArr = [];
+
     var addCoffee = document.querySelector('#search-roasts');
-    addCoffee.addEventListener('keyup', function (e) {
-        var input = e.target.value;
-        console.log(input)
-        localStorage.setItem('name', input)
-    })
+    var selectedRoast = roastSelection2.value
+    var newCoffeeName = addCoffee.value;
+
+    var newCoffee = {name: newCoffeeName, roast: selectedRoast};
+    newCoffeeArr.push(newCoffee);
+    console.log(newCoffee);
+    localStorage.setItem('name', newCoffee.name)
+    tbody2.innerHTML = renderCoffees(newCoffeeArr);
 
 }
 
@@ -75,15 +80,15 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-
+// global variables
 var tbody = document.querySelector('#coffees');
+var tbody2 = document.querySelector('#new-coffees');
 var submitButton = document.querySelector('#submit');
 var submit2 = document.querySelector('#submit-2');
 var roastSelection = document.querySelector('#roast-selection');
-
-
+var roastSelection2 = document.querySelector('#roast-selection-2')
+// inner html variable
 tbody.innerHTML = renderCoffees(coffees);
-
-
+// button variables with functions attached to an on click event
 submitButton.addEventListener('click', updateCoffees);
-submit2.addEventListener('click', addACoffee)
+submit2.addEventListener('click', addACoffee);
