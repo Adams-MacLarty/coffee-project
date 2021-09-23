@@ -43,21 +43,21 @@ function updateCoffees(e) {
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
+    tbody2.innerHTML = ''
 }
 
 function addACoffee(e) {
     e.preventDefault()
 
     var newCoffeeArr = [];
-
     var addCoffee = document.querySelector('#search-roasts');
     var selectedRoast = roastSelection2.value
     var newCoffeeName = addCoffee.value;
-
     var newCoffee = {name: newCoffeeName, roast: selectedRoast};
     newCoffeeArr.push(newCoffee);
     console.log(newCoffee);
-    localStorage.setItem('name', newCoffee.name)
+    localStorage.setItem('name', newCoffee.name);
+    localStorage.setItem('roast', selectedRoast)
     tbody2.innerHTML = renderCoffees(newCoffeeArr);
 
 }
