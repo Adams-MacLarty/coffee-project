@@ -36,8 +36,14 @@ body {
     opacity: 75%;
 }
 
+#icon1 {
+        margin: 4px 6px 6px 0;
+
+}
+
 .btn {
     width: 100%;
+
 }
 
 .buttons {
