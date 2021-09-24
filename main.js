@@ -52,13 +52,19 @@ function updateCoffees(e) {
 function addACoffee(e) {
     // don't submit the form, we just want to update the data
     e.preventDefault();
+
     // declaring a new coffee array
     var newCoffeeArr = [];
+
+    // getting the html element by id and storing it in a variable
     var addCoffee = document.querySelector('#search-roasts');
+
     // user new roast selection
     var selectedRoast = roastSelection2.value;
+
     // user new coffee name
     var newCoffeeName = addCoffee.value;
+
     // converting new user input into a new object
     var newCoffee = {id: (coffees.length + 1).toString(), name: newCoffeeName, roast: selectedRoast};
 
