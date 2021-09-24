@@ -4,7 +4,6 @@ function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     html += '<span class="coffee-name content">' + coffee.name + '<span class="roast-name">' + coffee.roast + '</span>' + '</span>';
     html += '</div>';
-
     return html;
 }
 
@@ -21,9 +20,8 @@ function searchCoffees() {
     var searchedCoffees = []
     coffeeSearch.addEventListener('keyup', function (e) {
         var searchStr = e.target.value.toLowerCase();
-        console.log(searchStr)
         coffees.forEach(function (coffee) {
-            if (coffee.name.toLowerCase().includes(searchStr.toLowerCase())) {
+            if (coffee.name.toLowerCase().includes(searchStr)) {
                 searchedCoffees.push(coffee);
             }
             tbody.innerHTML = renderCoffees(searchedCoffees);
@@ -33,6 +31,7 @@ function searchCoffees() {
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
+    // var declaring the value of user input
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     coffees.forEach(function (coffee) {
@@ -53,14 +52,20 @@ function addACoffee(e) {
     var selectedRoast = roastSelection2.value;
     var newCoffeeName = addCoffee.value;
     var newCoffee = {id: (coffees.length + 1).toString(), name: newCoffeeName, roast: selectedRoast};
-    newCoffeeArr.push(newCoffee);
-    var storedCoffee = localStorage.firstRecord = JSON.stringify(newCoffeeArr);
-    console.log(storedCoffee);
-    var storedCoffeeId = localStorage.getItem('id');
-    //var storedCoffee = localStorage.getItem('name');
-    var storedRoast = localStorage.getItem('roast');
-    var newStoredCoffee = [storedCoffeeId, storedCoffee, storedRoast];
-    console.log(newStoredCoffee);
+
+    // storing user data in local storage and converting data to a string
+    var storedCoffeeArr = localStorage.firstRecord = JSON.stringify(newCoffee);
+    localStorage.setItem('firstRecord',storedCoffeeArr);
+
+    // getting stored data from local storage
+    var getStoredCoffee = localStorage.getItem('firstRecord')
+    console.log(getStoredCoffee)
+
+    // parsing the local storage data back into an object
+    var parsedCoffee = JSON.parse(getStoredCoffee)
+    console.log(parsedCoffee)
+    // pushing the parsed user data onto the page
+    newCoffeeArr.push(parsedCoffee);
     tbody2.innerHTML = renderCoffees(newCoffeeArr);
 }
 
