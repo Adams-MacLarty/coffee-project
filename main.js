@@ -31,42 +31,52 @@ function searchCoffees() {
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    // var declaring the value of user input
+    // var declaring roast value of user input
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
+    // looping through coffees array to compare roast values
     coffees.forEach(function (coffee) {
+        // if roast selection is all push all coffees to filtered coffees array
         if (selectedRoast === 'all') {
             filteredCoffees.push(coffee)
+        // if user selects a specific roast push all coffees of selected roast to filtered coffees array
         } else if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
     });
+    // rendering filtered coffees array using render coffees function
     tbody.innerHTML = renderCoffees(filteredCoffees);
     tbody2.innerHTML = ''
 }
 
 function addACoffee(e) {
+    // don't submit the form, we just want to update the data
     e.preventDefault();
+    // declaring a new coffee array
     var newCoffeeArr = [];
     var addCoffee = document.querySelector('#search-roasts');
+    // user new roast selection
     var selectedRoast = roastSelection2.value;
+    // user new coffee name
     var newCoffeeName = addCoffee.value;
+    // converting new user input into a new object
     var newCoffee = {id: (coffees.length + 1).toString(), name: newCoffeeName, roast: selectedRoast};
 
-    // storing user data in local storage and converting data to a string
+    // storing user data in local storage and converting new object to a string
     var storedCoffeeArr = localStorage.firstRecord = JSON.stringify(newCoffee);
     localStorage.setItem('firstRecord',storedCoffeeArr);
 
     // getting stored data from local storage
-    var getStoredCoffee = localStorage.getItem('firstRecord')
-    console.log(getStoredCoffee)
+    var getStoredCoffee = localStorage.getItem('firstRecord');
+    console.log(getStoredCoffee);
 
     // parsing the local storage data back into an object
-    var parsedCoffee = JSON.parse(getStoredCoffee)
-    console.log(parsedCoffee)
-    // pushing the parsed user data onto the page
+    var parsedCoffee = JSON.parse(getStoredCoffee);
+    console.log(parsedCoffee);
+
+    // pushing the parsed user data into the newCoffeeArr
     newCoffeeArr.push(parsedCoffee);
-    tbody2.innerHTML = renderCoffees(newCoffeeArr);
+    tbody2.innerHTML += renderCoffees(newCoffeeArr);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
