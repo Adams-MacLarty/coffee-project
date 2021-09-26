@@ -46,7 +46,6 @@ function updateCoffees(e) {
     });
     // rendering filtered coffees array using render coffees function
     tbody.innerHTML = renderCoffees(filteredCoffees);
-
 }
 
 function addACoffee(e) {
@@ -85,9 +84,10 @@ function addACoffee(e) {
     tbody2.innerHTML = renderCoffees(newCoffeeArr);
 }
 
+// accessing local storage data for use in our html
 var storedCoffees = localStorage.getItem('firstRecord')
 var parsedStoredCoffees = JSON.parse(storedCoffees)
-console.log(parsedStoredCoffees)
+//console.log(parsedStoredCoffees)
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -120,4 +120,5 @@ tbody.innerHTML = renderCoffees(coffees);
 // button variables with functions attached to an on click event
 submitButton.addEventListener('click', updateCoffees);
 submit2.addEventListener('click', addACoffee);
+// setting the inner html of tbody2 to whatever is in local storage
 tbody2.innerHTML = renderCoffee(parsedStoredCoffees)
