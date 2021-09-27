@@ -53,6 +53,7 @@ body {
     outline-color: var(--main);
 }
 
+
 .btn-primary:hover {
     color: white;
     background-color: var(--main);
