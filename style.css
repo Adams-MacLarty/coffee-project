@@ -4,12 +4,13 @@
 }
 
 .coffee-title {
-    font-size: xx-large;
+    font-size: 16px;
 }
 
 .coffee-title {
+    align-items: center;
     font-family: "Hoefler Text", sans-serif;
-    font-size: 6em;
+    font-size: 96px;
     text-decoration: underline;
     font-style: italic;
     color: var(--main);
@@ -24,14 +25,14 @@
 body {
     background-color: var(--main);
     color: var(--main);
-    padding: 1em;
+    padding: 16px;
     background-image: url("background-coffee_beans.jpg");
 }
 
 .inside {
     background-color: blanchedalmond;
     font-family: "Hoefler Text", sans-serif;
-    font-size: 2em;
+    font-size: 32px;
     opacity: 75%;
 }
 
