@@ -107,7 +107,7 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-
+coffees.push(parsedStoredCoffees)
 // global variables
 var tbody = document.querySelector('#coffees');
 var tbody2 = document.querySelector('#new-coffees');
@@ -120,5 +120,6 @@ tbody.innerHTML = renderCoffees(coffees);
 // button variables with functions attached to an on click event
 submitButton.addEventListener('click', updateCoffees);
 submit2.addEventListener('click', addACoffee);
-// setting the inner html of tbody2 to whatever is in local storage
-tbody2.innerHTML = renderCoffee(parsedStoredCoffees)
+
+
+
