@@ -18,7 +18,7 @@ function renderCoffees(coffees) {
 function searchCoffees() {
     var coffeeSearch = document.getElementById('coffee-form');
     var searchedCoffees = []
-    coffeeSearch.addEventListener('keyup', function() {
+    coffeeSearch.addEventListener('keyup', function () {
         var searchStr = coffeeSearch.value.toLowerCase();
         coffees.forEach(function (coffee) {
             if (coffee.name.toLowerCase().includes(searchStr)) {
@@ -41,7 +41,6 @@ function updateCoffees(e) {
         // if roast selection is all push all coffees to filtered coffees array
         if (selectedRoast === 'all') {
             filteredCoffees.push(coffee)
-
             // if user selects a specific roast push all coffees of selected roast to filtered coffees array
         } else if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
