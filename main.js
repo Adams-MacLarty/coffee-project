@@ -39,7 +39,7 @@ function updateCoffees(e) {
         // if roast selection is all push all coffees to filtered coffees array
         if (selectedRoast === 'all') {
             filteredCoffees.push(coffee)
-        // if user selects a specific roast push all coffees of selected roast to filtered coffees array
+            // if user selects a specific roast push all coffees of selected roast to filtered coffees array
         } else if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
@@ -65,10 +65,11 @@ function addACoffee(e) {
     var newCoffeeName = addCoffee.value;
 
     // converting new user input into a new object
-    var newCoffee = {id: (coffees.length + 1).toString(), name: newCoffeeName, roast: selectedRoast};
+    var newCoffee = {id: (coffees.length + 1), name: newCoffeeName, roast: selectedRoast};
 
     coffees.push(newCoffee);
-    localStorage.setItem('coffees', JSON.stringify(coffees));
+    localStorage.setItem('coffees', JSON.stringify(newCoffee));
+
     // // storing user data in local storage and converting new object to a string
     // var storedCoffeeArr = localStorage.firstRecord = JSON.stringify(newCoffee);
     // localStorage.setItem('firstRecord',storedCoffeeArr);
@@ -83,10 +84,9 @@ function addACoffee(e) {
     //
     // // pushing the parsed user data into the newCoffeeArr
     // newCoffeeArr.push(parsedCoffee);
-    tbody2.innerHTML = renderCoffees(coffees);
+    tbody.innerHTML = renderCoffees(coffees);
+
 }
-
-
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -110,19 +110,19 @@ var coffees = [
 // accessing local storage data for use in our html
 var storedCoffees = localStorage.getItem('coffees')
 var parsedStoredCoffees = JSON.parse(storedCoffees)
+
 console.log(parsedStoredCoffees)
 console.log(storedCoffees)
 //console.log(parsedStoredCoffees)
 // if no coffees pull from array
 if (storedCoffees === null) {
     localStorage.setItem('coffees', JSON.stringify(coffees));
-}
-else {
+} else {
     coffees = parsedStoredCoffees;
 }
 
 
-// coffees.push(parsedStoredCoffees)
+//coffees.push(parsedStoredCoffees)
 // global variables
 var tbody = document.querySelector('#coffees');
 var tbody2 = document.querySelector('#new-coffees');
@@ -132,6 +132,7 @@ var roastSelection = document.querySelector('#roast-selection');
 var roastSelection2 = document.querySelector('#roast-selection-2')
 // inner html variable
 tbody.innerHTML = renderCoffees(coffees);
+
 // button variables with functions attached to an on click event
 submitButton.addEventListener('click', updateCoffees);
 submit2.addEventListener('click', addACoffee);
