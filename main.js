@@ -125,7 +125,7 @@ if (storedCoffees === null) {
 //coffees.push(parsedStoredCoffees)
 // global variables
 var tbody = document.querySelector('#coffees');
-var tbody2 = document.querySelector('#new-coffees');
+//var tbody2 = document.querySelector('#new-coffees');
 var submitButton = document.querySelector('#submit');
 var submit2 = document.querySelector('#submit-2');
 var roastSelection = document.querySelector('#roast-selection');
