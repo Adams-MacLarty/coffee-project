@@ -67,27 +67,26 @@ function addACoffee(e) {
     // converting new user input into a new object
     var newCoffee = {id: (coffees.length + 1).toString(), name: newCoffeeName, roast: selectedRoast};
 
-    // storing user data in local storage and converting new object to a string
-    var storedCoffeeArr = localStorage.firstRecord = JSON.stringify(newCoffee);
-    localStorage.setItem('firstRecord',storedCoffeeArr);
-
-    // getting stored data from local storage
-    var getStoredCoffee = localStorage.getItem('firstRecord');
-    //console.log(getStoredCoffee);
-
-    // parsing the local storage data back into an object
-    var parsedCoffee = JSON.parse(getStoredCoffee);
-    //console.log(parsedCoffee);
-
-    // pushing the parsed user data into the newCoffeeArr
-    newCoffeeArr.push(parsedCoffee);
-    tbody2.innerHTML = renderCoffees(newCoffeeArr);
+    coffees.push(newCoffee);
+    localStorage.setItem('coffees', JSON.stringify(coffees));
+    // // storing user data in local storage and converting new object to a string
+    // var storedCoffeeArr = localStorage.firstRecord = JSON.stringify(newCoffee);
+    // localStorage.setItem('firstRecord',storedCoffeeArr);
+    //
+    // // getting stored data from local storage
+    // var getStoredCoffee = localStorage.getItem('firstRecord');
+    // //console.log(getStoredCoffee);
+    //
+    // // parsing the local storage data back into an object
+    // var parsedCoffee = JSON.parse(getStoredCoffee);
+    // //console.log(parsedCoffee);
+    //
+    // // pushing the parsed user data into the newCoffeeArr
+    // newCoffeeArr.push(parsedCoffee);
+    tbody2.innerHTML = renderCoffees(coffees);
 }
 
-// accessing local storage data for use in our html
-var storedCoffees = localStorage.getItem('firstRecord')
-var parsedStoredCoffees = JSON.parse(storedCoffees)
-//console.log(parsedStoredCoffees)
+
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -108,7 +107,22 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-coffees.push(parsedStoredCoffees)
+// accessing local storage data for use in our html
+var storedCoffees = localStorage.getItem('coffees')
+var parsedStoredCoffees = JSON.parse(storedCoffees)
+console.log(parsedStoredCoffees)
+console.log(storedCoffees)
+//console.log(parsedStoredCoffees)
+// if no coffees pull from array
+if (storedCoffees === null) {
+    localStorage.setItem('coffees', JSON.stringify(coffees));
+}
+else {
+    coffees = parsedStoredCoffees;
+}
+
+
+// coffees.push(parsedStoredCoffees)
 // global variables
 var tbody = document.querySelector('#coffees');
 var tbody2 = document.querySelector('#new-coffees');
