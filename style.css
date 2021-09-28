@@ -27,13 +27,22 @@ body {
     color: var(--main);
     padding: 16px;
     background-image: url("background-coffee_beans.jpg");
+    /*background-image: url("bg-ani_coffee.gif");*/
+    /*background-size: cover;*/
+
 }
 
 .inside {
     background-color: blanchedalmond;
     font-family: "Hoefler Text", sans-serif;
-    font-size: 32px;
-    opacity: 75%;
+    font-size: 40px;
+    opacity: 90%;
+    /*background-image: url("bg-ani_coffee.gif");*/
+    /*background-size: cover;*/
+    border-color: var(--main);
+    border-style: solid;
+    border-width: 15px;
+
 }
 
 .btn {
@@ -47,5 +56,14 @@ body {
     border-color: var(--main); /*set the color you want here*/
     outline-color: var(--main);
 }
-/*
 
+.ani-bg {
+        background-image: url("bg-ani_coffee.gif");
+    background-size: cover;
+    justify-content: space-around;
+}
+
+
+.form-text {
+        font-size: 24px;
+}

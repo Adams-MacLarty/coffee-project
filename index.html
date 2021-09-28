@@ -18,12 +18,18 @@
 
 <!-- begin title and cup images -->
     <div class="row coffee-title d-flex justify-content-center mt-3">
-        <img src="icon-1.png" class="mt-4 mr-5 d-none d-lg-block" height="150px" width="150px">
+<!--        <img src="icon-1.png" class="mt-4 mr-5 d-none d-lg-block" height="150px" width="150px">-->
         Coffee!
-        <img id="icon1" src="icon-1.png" class="mt-4 ml-5 mr-5 mt-4 ml-5 d-none d-lg-block" height="150" width="150px">
+<!--        <img id="icon1" src="icon-1.png" class="mt-4 ml-5 mr-5 mt-4 ml-5 d-none d-lg-block" height="150" width="150px">-->
     </div>
 
-    <div class="row d-flex justify-content-center">
+        <div class="row d-flex  ani-bg">
+        <img src="icon-1.png" class="d-none d-lg-block" height="150px" width="150px">
+            <img src="icon-1.png" class="d-none d-lg-block" height="150px" width="150px">
+            <img src="icon-1.png" class="d-none d-lg-block" height="150px" width="150px">
+    </div>
+
+    <div class="row d-flex justify-content-center ani-bg">
         <img src="icon-1.png" class="mb-3 ml-5 mr-5 d-md-block d-lg-none" height="150px" width="150px">
     </div>
 <!-- end title and cup images -->
@@ -47,19 +53,19 @@
             <form>
                 <div class="form-group">
                     <label for="coffee-form">Coffee choice</label>
-                    <input type="email" class="form-control" id="coffee-form" onkeyup="searchCoffees()"
+                    <input type="email" class="form-control form-text" id="coffee-form" onkeyup="searchCoffees()"
                            placeholder="Coffee name here">
                 </div>
                 <div class="form-group">
                     <label for="roast-selection">Roast</label>
-                    <select class="form-control" id="roast-selection">
+                    <select class="form-control form-text" id="roast-selection">
                         <option id="all">all</option>
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
                     </select>
                     <br>
-                    <button type="submit" class="btn buttons button-on-click shadow-none" id="submit">
+                    <button type="submit" class="btn buttons button-on-click shadow-none form-text" id="submit">
                         Submit
                     </button>
                 </div>
@@ -70,19 +76,19 @@
             <form>
                 <div class="form-group">
                     <label for="search-roasts">Add a Coffee</label>
-                    <input type="text" class="form-control" id="search-roasts"
+                    <input type="text" class="form-control form-bg form-text" id="search-roasts"
                            placeholder="add a coffee here">
                 </div>
                 <div class="form-group">
                     <label for="roast-selection">Roast</label>
                     <label for="search-roasts"></label>
-                    <select class="form-control" id="roast-selection-2">
+                    <select class="form-control form-text" id="roast-selection-2">
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
                     </select>
                     <br>
-                    <button type="submit" class="btn buttons button-on-click shadow-none" id="submit-2">
+                    <button type="submit" class="btn buttons button-on-click shadow-none form-text" id="submit-2">
                         Submit
                     </button>
                 </div>
