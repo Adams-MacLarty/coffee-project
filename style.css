@@ -4,19 +4,20 @@
 }
 
 .coffee-title {
-    font-size: xx-large;
+    font-size: 16px;
 }
 
 .coffee-title {
+    align-items: center;
     font-family: "Hoefler Text", sans-serif;
-    font-size: 6em;
+    font-size: 130px;
     text-decoration: underline;
     font-style: italic;
     color: var(--main);
 }
 
 .roast-name {
-    font-size: large;
+    font-size: x-large;
     color: var(--roast);
     padding: 0 30px 0 10px;
 }
@@ -24,15 +25,24 @@
 body {
     background-color: var(--main);
     color: var(--main);
-    padding: 1em;
+    padding: 16px;
     background-image: url("background-coffee_beans.jpg");
+    /*background-image: url("bg-ani_coffee.gif");*/
+    /*background-size: cover;*/
+
 }
 
 .inside {
     background-color: blanchedalmond;
     font-family: "Hoefler Text", sans-serif;
-    font-size: 2em;
-    opacity: 75%;
+    font-size: 40px;
+    opacity: 90%;
+    /*background-image: url("bg-ani_coffee.gif");*/
+    /*background-size: cover;*/
+    border-color: var(--main);
+    border-style: solid;
+    border-width: 15px;
+
 }
 
 .btn {
@@ -46,5 +56,14 @@ body {
     border-color: var(--main); /*set the color you want here*/
     outline-color: var(--main);
 }
-/*
 
+.ani-bg {
+        background-image: url("bg-ani_coffee.gif");
+    background-size: cover;
+    justify-content: space-around;
+}
+
+
+.form-text {
+        font-size: 24px;
+}
