@@ -2,6 +2,7 @@
 * navbar
 * convert bootstrap to flexbox
 * change mininav to icon-1.png
+* add 'dev', hover: 'dev: $' to nav
 
 ### JavaScript
 * switch to [localforage](https://localforage.github.io/localForage/)
