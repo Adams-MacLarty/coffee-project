@@ -1,9 +1,69 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+:root {
+    --main: #1F0000;  /* dark brown */
+    --roast: #835C3B; /* light brown */
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+.coffee-title {
+    font-size: 16px;
+}
+
+.coffee-title {
+    align-items: center;
+    font-family: "Hoefler Text", sans-serif;
+    font-size: 130px;
+    text-decoration: underline;
+    font-style: italic;
+    color: var(--main);
+}
+
+.roast-name {
+    font-size: x-large;
+    color: var(--roast);
+    padding: 0 30px 0 10px;
+}
+
+body {
+    background-color: var(--main);
+    color: var(--main);
+    padding: 16px;
+    background-image: url("../img/bg-coffee_beans-2.jpg");
+    /*background-image: url("bg-ani_coffee.gif");*/
+    /*background-size: cover;*/
+
+}
+
+.inside {
+    background-color: blanchedalmond;
+    font-family: "Hoefler Text", sans-serif;
+    font-size: 40px;
+    opacity: 90%;
+    /*background-image: url("bg-ani_coffee.gif");*/
+    /*background-size: cover;*/
+    border-color: var(--main);
+    border-style: solid;
+    border-width: 15px;
+
+}
+
+.btn {
+    width: 100%;
+
+}
+
+.buttons {
+    color: var(--roast);
+    background-color: var(--main);
+    border-color: var(--main); /*set the color you want here*/
+    outline-color: var(--main);
+}
+
+.ani-bg {
+        background-image: url("../img/bg-ani_coffee.gif");
+    background-size: cover;
+    justify-content: space-around;
+}
+
+
+.form-text {
+        font-size: 24px;
 }
